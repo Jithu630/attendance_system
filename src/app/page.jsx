@@ -1,25 +1,16 @@
-import './globals.css';
-import Link from 'next/link';
-
-export const metadata = {
-  title: 'Attendance System',
-};
-
-export default function RootLayout({ children }) {
+export default function HomePage() {
   return (
-    <html lang="en">
-      <body>
-        <nav className="bg-blue-600 p-4 text-white flex justify-between">
-          <div className="font-bold text-xl">Attendance System</div>
-          <div className="space-x-4">
-            <Link href="/">Home</Link>
-            <Link href="/login">Login</Link>
-            <Link href="/signup">Signup</Link>
-            <Link href="/dashboard">Dashboard</Link>
-          </div>
-        </nav>
-        <main className="p-6">{children}</main>
-      </body>
-    </html>
+    <div className="text-center mt-20">
+      <h2 className="text-4xl font-bold mb-4">Welcome to the Attendance System</h2>
+      <p className="text-lg text-gray-600 mb-6">
+        A simple and efficient way to manage attendance.
+      </p>
+      <a
+        href="/login"
+        className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+      >
+        Get Started
+      </a>
+    </div>
   );
 }

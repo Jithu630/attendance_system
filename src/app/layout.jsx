@@ -8,17 +8,27 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <nav className="bg-blue-600 p-4 text-white flex justify-between">
-          <div className="font-bold text-xl">Attendance System</div>
-          <div className="space-x-4">
-            <Link href="/">Home</Link>
-            <Link href="/login">Login</Link>
-            <Link href="/signup">Signup</Link>
-            <Link href="/dashboard">Dashboard</Link>
+      <body className="bg-gray-100 text-gray-900">
+        <header className="bg-blue-600 text-white p-4 shadow-md">
+          <div className="container mx-auto flex justify-between items-center">
+            <h1 className="text-xl font-bold">Attendance System</h1>
+            <nav className="space-x-4">
+              <Link href="/" className="hover:underline">
+                Home
+              </Link>
+              <Link href="/login" className="hover:underline">
+                Login
+              </Link>
+              <Link href="/signup" className="hover:underline">
+                Signup
+              </Link>
+              <Link href="/dashboard" className="hover:underline">
+                Dashboard
+              </Link>
+            </nav>
           </div>
-        </nav>
-        <main className="p-6">{children}</main>
+        </header>
+        <main className="container mx-auto p-6">{children}</main>
       </body>
     </html>
   );
