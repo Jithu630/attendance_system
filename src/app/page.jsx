@@ -1,11 +1,25 @@
-// src/app/page.jsx
-export default function Home() {
+import './globals.css';
+import Link from 'next/link';
+
+export const metadata = {
+  title: 'Attendance System',
+};
+
+export default function RootLayout({ children }) {
   return (
-    <main className="flex items-center justify-center h-screen">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold">Attendance System</h1>
-        <p className="mt-2">Go to <a href="/login" className="text-blue-500 underline">Login</a></p>
-      </div>
-    </main>
+    <html lang="en">
+      <body>
+        <nav className="bg-blue-600 p-4 text-white flex justify-between">
+          <div className="font-bold text-xl">Attendance System</div>
+          <div className="space-x-4">
+            <Link href="/">Home</Link>
+            <Link href="/login">Login</Link>
+            <Link href="/signup">Signup</Link>
+            <Link href="/dashboard">Dashboard</Link>
+          </div>
+        </nav>
+        <main className="p-6">{children}</main>
+      </body>
+    </html>
   );
 }

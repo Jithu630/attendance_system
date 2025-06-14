@@ -1,17 +1,25 @@
-// src/app/layout.jsx
-import './globals.css'
+import './globals.css';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Attendance System',
-  description: 'A simple attendance system using Next.js and Supabase',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gray-50 text-gray-900">
-        {children}
+      <body>
+        <nav className="bg-blue-600 p-4 text-white flex justify-between">
+          <div className="font-bold text-xl">Attendance System</div>
+          <div className="space-x-4">
+            <Link href="/">Home</Link>
+            <Link href="/login">Login</Link>
+            <Link href="/signup">Signup</Link>
+            <Link href="/dashboard">Dashboard</Link>
+          </div>
+        </nav>
+        <main className="p-6">{children}</main>
       </body>
     </html>
-  )
+  );
 }
